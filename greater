@@ -1,0 +1,14 @@
+def extract_last_two_digits(n):
+    if n < 100 and n > -100:
+        raise ValueError("The number should have more than 2 digits.")
+    
+    last_two_digits = abs(n) % 100  # Use abs to handle negative numbers correctly
+    return last_two_digits
+
+# Example usage:
+try:
+    number = int(input("Enter an integer with more than 2 digits: "))
+    result = extract_last_two_digits(number)
+    print(f"The last two digits of {number} are: {result}")
+except ValueError as e:
+    print(e)
