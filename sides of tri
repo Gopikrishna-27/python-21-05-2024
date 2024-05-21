@@ -1,0 +1,15 @@
+def is_valid_triangle(a, b, c):
+    # Check triangle inequality theorem
+    return a + b > c and a + c > b and b + c > a
+
+# Input
+sides = input("Enter the length of three sides of triangle: ").split()
+
+# Convert input to integers
+a, b, c = map(int, sides)
+
+# Check validity and print result
+if is_valid_triangle(a, b, c):
+    print("Valid triangle")
+else:
+    print("Invalid triangle")
