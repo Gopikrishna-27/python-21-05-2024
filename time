@@ -1,0 +1,12 @@
+def find_coinciding_time_in_minutes(hours):
+    if hours < 0 or hours >= 12:
+        return "Invalid input"
+    
+    # Calculate the time in minutes where the minute and hour hands coincide
+    t = (60 * hours) / 11
+    return f"({int(60 * hours)}/11) minutes"
+
+# Example usage:
+hours = float(input("Enter time in hours: "))
+result = find_coinciding_time_in_minutes(hours)
+print(result)
