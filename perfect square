@@ -1,0 +1,10 @@
+num = int(input("Enter a number: "))
+perfectsquare = False
+for i in range(int(num ** 0.5) + 1):
+    if i * i == num:
+        perfectsquare = True
+        break
+if perfectsquare:
+    print(num, "is a perfect square.")
+else:
+    print(num, "is not a perfect square.")
