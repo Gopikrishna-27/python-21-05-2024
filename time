@@ -1,12 +1,7 @@
-def find_coinciding_time_in_minutes(hours):
-    if hours < 0 or hours >= 12:
-        return "Invalid input"
-    
-    # Calculate the time in minutes where the minute and hour hands coincide
-    t = (60 * hours) / 11
-    return f"({int(60 * hours)}/11) minutes"
-
-# Example usage:
-hours = float(input("Enter time in hours: "))
-result = find_coinciding_time_in_minutes(hours)
-print(result)
+current = int(input("Enter the current hour (in 24-hour format): "))
+for hour in range(current, current + 2):
+    hour_angle = (hour % 12) * 3
+    for minute in range(60):
+        minute_angle = minute * 6
+        if abs(hour_angle - minute_angle) < 0.001:
+            print("The hour and minute hands coincide at {}:{}.".format(hour, minute))
