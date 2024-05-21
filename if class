@@ -1,0 +1,18 @@
+def is_insured(marital_status, gender, age):
+    if marital_status.lower() == 'married':
+        return True
+    elif marital_status.lower() == 'unmarried':
+        if gender.lower() == 'male' and age > 30:
+            return True
+        elif gender.lower() == 'female' and age > 25:
+            return True
+    return False
+
+marital_status = input("Enter the marital status (married/unmarried): ").strip()
+gender = input("Enter the gender (male/female): ").strip()
+age = int(input("Enter the age: "))
+
+if is_insured(marital_status, gender, age):
+    print("The driver is eligible for insurance.")
+else:
+    print("The driver is not eligible for insurance.")
