@@ -1,0 +1,18 @@
+def can_form_rectangle(sides):
+    # Sort the list of sides
+    sides.sort()
+    
+    # Check if the sorted list has two pairs of equal lengths
+    return sides[0] == sides[1] and sides[2] == sides[3]
+
+# Example usage:
+sides_input = input("Enter rectangle four sides of length: ")
+sides = list(map(int, sides_input.split()))
+
+if len(sides) != 4:
+    print("Please enter exactly four side lengths.")
+else:
+    if can_form_rectangle(sides):
+        print("Yes")
+    else:
+        print("No")
